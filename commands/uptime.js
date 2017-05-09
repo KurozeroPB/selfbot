@@ -8,7 +8,7 @@ module.exports = (self) => {
           name: `Uptime:`,
           icon_url: ``
         },
-        description: `:clock1: ${this.formatTime(bot.uptime)}`
+        description: `:clock1: ${this.formatTime(self.uptime)}`
       }
     });
   })
