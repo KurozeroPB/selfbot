@@ -3,12 +3,12 @@
 */
 module.exports = (self) => {
   self.registerCommand('kick', function (msg, args) {
-    if (!args[0]) return this.send(msg, 'Need to specify a name, an ID or mention the user.')
+    if (!args[0]) return this.self.createMessage(msg.channel.id, 'Need to specify a name, an ID or mention the user.')
     let user = this.findMember(msg, args[0])
-    if (!user) return this.send(msg, 'That is not a valid guild member. Need to specify a name, an ID or mention the user.')
+    if (!user) return this.self.createMessage(msg.channel.id, 'That is not a valid guild member. Need to specify a name, an ID or mention the user.')
     msg.channel.guild.kickMember(user.id)
-    .then(() => this.send(msg, '👌'))
-    .catch((err) => { this.log.err(err, 'Kick'); this.send(msg, `Could not kick ${user.username}`) })
+    .then(() => this.self.createMessage(msg.channel.id, '👌'))
+    .catch((err) => { this.log.err(err, 'Kick'); this.self.createMessage(msg.channel.id, `Could not kick ${user.username}`) })
   }, {
     perms: ['kickMembers'],
     noPms: true

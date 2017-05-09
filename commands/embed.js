@@ -5,7 +5,7 @@ Send embed message.
 module.exports = (self) => {
   self.registerCommand('embed', function (msg, messageArray) {
 
-    this.send(msg, { content: ``,
+    this.self.createMessage(msg.channel.id, { content: ``,
       embed: {
         color: 0x00BFFF,
         author: {

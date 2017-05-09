@@ -11,7 +11,7 @@ module.exports = (self) => {
     var array = str.split(','),
         a=array[0], b=array[1], c=array[2];
     if(a === 'list') {
-      this.send(msg, { content: ``,
+      this.self.createMessage(msg.channel.id, { content: ``,
         embed: {
           color: 0x00BFFF,
           author: {
@@ -49,7 +49,7 @@ lolibooru.moe, aliases: ["lb", "lol", "loli", "lolibooru"]`,
           for (let image of images) {
             var tag = image.common.tags + "";
             var tags = tag.split(',').join(', ');
-            this.send(msg, { content: ``,
+            this.self.createMessage(msg.channel.id, { content: ``,
               embed: {
                 color: 0x00BFFF,
                 author: {
@@ -88,7 +88,7 @@ Rating: ${image.common.rating}`,
           for (let image of images) {
             var tag = image.common.tags + "";
             var tags = tag.split(',').join(', ');
-            this.send(msg, { content: ``,
+            this.self.createMessage(msg.channel.id, { content: ``,
               embed: {
                 color: 0x00BFFF,
                 author: {

@@ -11,14 +11,14 @@ module.exports = (self) => {
 	if(interval){
 		clearInterval(interval);
 		interval = null;
-		this.send(msg, `Stopped bumping`);
+		this.self.createMessage(msg.channel.id, `Stopped bumping`);
 		return;
 	}
 	index = 0;
-	this.send(msg, `Started bumping`);
+	this.self.createMessage(msg.channel.id, `Started bumping`);
 	interval = setInterval(() => {
 		this.log.log(`${bump[index]}`, 'tbump');
-		this.send(msg, `${bump[index]}`);
+		this.self.createMessage(msg.channel.id, `${bump[index]}`);
 		index++;
 		if(index >= bump.length){
 			index = 0;

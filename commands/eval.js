@@ -9,7 +9,7 @@ module.exports = (self) => {
     if (msg.author.id !== this.self.user.id) return
 
     // Delete the msg, create a new one, and then eval
-    this.send(msg, 'Evaluating...').then(m => {
+    this.self.createMessage(msg.channel.id, 'Evaluating...').then(m => {
       let evaled = ''
       try {
         evaled = eval(args.join(' ')) // eslint-disable-line no-eval

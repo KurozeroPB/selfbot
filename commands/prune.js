@@ -4,7 +4,7 @@
 module.exports = (self) => {
   self.registerCommand('prune', function (msg, args) {
 
-    if (!args[0] || !/\d{1,2}/ig.test(args[0])) return this.send(msg, 'Please specify the number of messages to delete.')
+    if (!args[0] || !/\d{1,2}/ig.test(args[0])) return this.self.createMessage(msg.channel.id, 'Please specify the number of messages to delete.')
     msg.channel.getMessages(200).then(msgs => {
       let msgArray = msgs.filter(m => m.author.id === this.self.user.id)
       msgArray.length = parseInt(args[0], 10) + 1

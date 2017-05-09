@@ -5,6 +5,6 @@
 module.exports = (self) => {
   self.registerCommand('playing', function (msg, args) {
     this.self.editStatus(this.config.defaultStatus.toLowerCase(), args ? {name: args.join(' ')} : null)
-    this.send(msg, '👌')
+    this.self.createMessage(msg.channel.id, '👌')
   })
 }

@@ -3,7 +3,7 @@
 */
 module.exports = (self) => {
   self.registerCommand('nick', function (msg, args) {
-    this.self.editNickname(msg.channel.guild.id, args ? args.join(' ') : null).then(() => this.send(msg, '👌'))
+    this.self.editNickname(msg.channel.guild.id, args ? args.join(' ') : null).then(() => this.self.createMessage(msg.channel.id, '👌'))
   }, {
     perms: ['changeNickname'],
     noPms: true

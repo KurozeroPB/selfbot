@@ -6,9 +6,9 @@ moment = require('../node_modules/moment');
 module.exports = (self) => {
   self.registerCommand('user', function(msg, args) {
     let user = this.findMember(msg, args[0])
-    if (!user) return this.send(msg, 'That is not a valid guild member. Need to specify a name, an ID or mention the user.')
+    if (!user) return this.self.createMessage(msg.channel.id, 'That is not a valid guild member. Need to specify a name, an ID or mention the user.')
     var id = msg.channel.guild.members.get(user.id);
-    this.send(msg, {
+    this.self.createMessage(msg.channel.id, {
       content: ``,
       embed: {
         color: 0x00BFFF,

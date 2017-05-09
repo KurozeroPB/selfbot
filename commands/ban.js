@@ -4,15 +4,15 @@
 */
 module.exports = (self) => {
   self.registerCommand('ban', function (msg, args) {
-    if (!args[0]) return this.send(msg, 'Need to specify a name, an ID or mention the user.')
+    if (!args[0]) return this.self.createMessage(msg.channel.id, 'Need to specify a name, an ID or mention the user.')
 
     let user = this.findMember(msg, args[0])
-    if (!user) return this.send(msg, 'That is not a valid guild member. Need to specify a name, an ID or mention the user.')
+    if (!user) return this.self.createMessage(msg.channel.id, 'That is not a valid guild member. Need to specify a name, an ID or mention the user.')
     let deleteDays = /\d{1}/.test(args[1]) ? parseInt(args[1], 10) : 3
 
     msg.channel.guild.banMember(user.id, deleteDays)
-    .then(() => this.send(msg, `🔨 - *Dropped the hammer on ${user.username}#${user.discriminator}* (Deleted ${deleteDays} days)`))
-    .catch((err) => { this.log.err(err, 'Ban'); this.send(msg, `Could not ban ${user.username}.`) })
+    .then(() => this.self.createMessage(msg.channel.id, `🔨 - *Dropped the hammer on ${user.username}#${user.discriminator}* (Deleted ${deleteDays} days)`))
+    .catch((err) => { this.log.err(err, 'Ban'); this.self.createMessage(msg.channel.id, `Could not ban ${user.username}.`) })
   }, {
     perms: ['banMembers'],
     noPms: true
