@@ -1,0 +1,24 @@
+{
+  "token": "",
+  "ownerID": "",
+  "prefix": "",
+  "rotatePlayingGame": true,
+  "rotatePlayingGameTime" : 150000,
+  "rotatePlayingGameInStreamingStatus": true,
+  "rotateAvatarImage": true,
+  "rotateAvatarImageTime" : 3200000,
+  "defaultStatus": "online",
+  "mentionNotificator": {
+    "inConsole": true,
+    "inNotificationChannel": true,
+    "logBlockedUsers": true
+  },
+  "eventNotificator": {
+    "inConsole": true,
+    "inNotificationChannel": true
+  },
+  "notificationChannelID": "290204691755827200",
+  "defaultEmbedColor": "#C5B2F9",
+  "deleteCommandMessages": false,
+  "deleteCommandMessagesTime": 0
+}
