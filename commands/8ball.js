@@ -1,6 +1,6 @@
 module.exports = (self) => {
   self.registerCommand('8ball', function(msg, args) {
-    let Answers = ["No", "Yes", "Of Course", "Of course not"];
+    let Answers = ["No", "Yes", "Of Course", "Of course not", "Most likely"];
     this.self.createMessage(msg.channel.id, {
       content: ``,
       embed: {
