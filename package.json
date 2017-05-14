@@ -34,7 +34,8 @@
     "node-google-image-search": "^1.0.3",
     "superagent": "^3.5.2",
     "util": "^0.10.3",
-    "y-currency": "^1.0.3"
+    "y-currency": "^1.0.3",
+    "aesthetics": "^2.1.0"
   },
   "devDependencies": {}
 }

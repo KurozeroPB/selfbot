@@ -8,6 +8,32 @@ module.exports = (self) => {
     // If msg author is not the owner
     if (msg.author.id !== this.self.user.id) return
 
+    if (!args) return bot.createMessage(msg.channel.id, {
+      content: ``,
+      embed: {
+        color: 0x00BFFF,
+        author: {
+          name: ``,
+          icon_url: ``
+        },
+        description: `Wtf do you want to evaluate?`,
+      }
+    });
+
+    let str = args.toString();
+    let lower = str.toLowerCase();
+    if (lower.includes('self.token')) return this.self.createMessage(msg.channel.id, {
+      content: ``,
+      embed: {
+        color: 0x00BFFF,
+        author: {
+          name: ``,
+          icon_url: ``
+        },
+        description: `owo no token here boii.`,
+      }
+    });
+
     // Delete the msg, create a new one, and then eval
     this.self.createMessage(msg.channel.id, 'Evaluating...').then(m => {
       let evaled = ''
@@ -32,7 +58,6 @@ module.exports = (self) => {
 \`\`\`js
 ${args.join(' ')}
 \`\`\`
-
 Output:
 \`\`\`js
 ${typeof (evaled) === 'string' ? evaled.replace(/`/g, '`' + String.fromCharCode(8203)) : evaled}
