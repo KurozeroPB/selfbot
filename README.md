@@ -8,5 +8,5 @@ If you do decide to run it I will _not_ be responsible for any consequences that
 Running a self/userbot can result into account deletion.**
 
 ## Questions?
-Join my guild:
+Join my guild:<br />
 [![Discord](https://discordapp.com/api/guilds/240059867744698368/embed.png?style=banner3)](https://discord.gg/Vf4ne5b)
